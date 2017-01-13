@@ -1,0 +1,4 @@
+<launch>
+	<node name="puplisher" pkg="test_pkg" type="pubsnode" output="screen" />
+	<node name="subscriber" pkg="test_pkg" type="subsnode" output="screen" />
+</launch>

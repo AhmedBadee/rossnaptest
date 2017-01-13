@@ -1,0 +1,22 @@
+<launch>
+	<!-- Arduino Node -->
+	<node pkg="rosserial_python" type="serial_node.py" name="arduino1">
+		<param name="port" value="/dev/ttyACM0"/>
+		<param name="baud" value="57600"/>
+	</node>
+	
+	<!-- Joy Node -->
+	<node respawn="true" pkg="joy" type="joy_node" name="joy1">
+		<param name="dev" type="string" value="/dev/input/js0"/>
+		<param name="deadzone" value="0.12"/>
+	</node>
+
+	<!-- Axes -->
+	<param name="axis_linear" value="1" type="int" />
+	<param name="axis_angular" value="0" type="int" />
+	<param name="scale_linear" value="2" type="double" />
+	<param name="scale_angular" value="2" type="double" />
+
+	<!-- Servo Joy Node -->
+	<node pkg="servo_joy" type="servo_node.py" name="servo1"/>
+</launch>

@@ -1,0 +1,5 @@
+<launch>
+	<node pkg="testmsg" name="publisher" type="publisher" />
+</launch>
+
+
